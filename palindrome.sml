@@ -8,5 +8,6 @@ fun removeNonAlphabetic list = if null list then [] else if (ord (hd list) >= 65
 
 fun changeToLowercase list = if null list then [] else if ord (hd list) >= 65 andalso ord (hd list) <= 90 then chr (ord (hd list) + 32) :: changeToLowercase (tl list) else hd (list) :: changeToLowercase (tl list);
 
-(* fun palindrome () = *)
-
+fun is_palindrome input =
+    removeNonAlphabetic (changeToLowercase (explode input)) = 
+    my_reverse (removeNonAlphabetic (changeToLowercase (explode input)));
